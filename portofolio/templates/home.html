@@ -1,22 +1,123 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Portofolio</title>
+    <!-- Meta dasar untuk encoding dan responsive layout -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Satria Gilang Arganata</title>
+
+    <!-- File CSS utama -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Google font untuk tampilan futuristik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Halo, ini portofolio saya</h1>
-    <p>Nama: Satria Gilang Arganata</p>
-    <h2>About Me</h2>
-    <p>Mahasiswa Sains Data dengan minat teknologi dan analisis data</p>
+    <!-- Layer background animasi code 404 jatuh -->
+    <div class="matrix-fall" id="matrix-fall" aria-hidden="true"></div>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>Python</li>
-        <li>Django</li>
-        <li>Data Analysis</li>
-    </ul>
+    <!-- Header / Hero -->
+    <header class="hero">
+        <!-- Kiri: nama + deskripsi pendek -->
+        <div class="hero-text glass reveal">
+            <p class="tagline">DATA SCIENCE • ANALYTICS • SYSTEM MAINTENANCE</p>
+            <h1 class="typing-text" id="typing-text" data-text="Satria Gilang Arganata"></h1>
+            <p class="subtitle">Predict. Optimize. Innovate.</p>
+        </div>
 
-    <h2>Projects</h2>
-    <p>Analisis wisata Rawa Pening</p>
+        <!-- Kanan: kartu profil + foto -->
+        <div class="profile-wrap glass reveal">
+            <div class="neon-banner pink-purple">PROFILE</div>
+
+            <div class="profile-frame floating">
+                <!-- Foto profil utama -->
+                <img src="{% static 'img/profile.jpg' %}" alt="Foto Satria Gilang Arganata" class="profile-photo"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"/>
+
+                <!-- Fallback jika foto tidak ada -->
+                <div class="profile-fallback">Upload<br>Foto Kamu</div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Konten utama -->
+    <main class="container">
+        <!-- About -->
+        <section class="card wide reveal">
+            <h2>About Me!</h2>
+            <p>
+                Mahasiswa S1 Sains Data dengan fokus pada analisis data, pemrograman, dan pemeliharaan sistem.
+                Memiliki keahlian teknis dalam pengolahan data serta pengalaman praktis dalam troubleshooting perangkat.
+                Berkomitmen menghadirkan solusi teknologi yang efisien melalui pemikiran analitis dan kolaborasi tim.
+            </p>
+        </section>
+
+        <!-- Hard & Soft Skill -->
+        <section class="card reveal">
+            <h2>Hard Skill</h2>
+            <ul class="point-list">
+                <li>Data Science</li>
+                <li>Data Analyst</li>
+                <li>Programming</li>
+                <li>Hardware Installation &amp; Maintenance</li>
+            </ul>
+
+            <h2>Soft Skill</h2>
+            <ul class="point-list">
+                <li>Problem Solving</li>
+                <li>Analytical Thinking</li>
+                <li>Communication &amp; Collaboration</li>
+                <li>Adaptability</li>
+            </ul>
+        </section>
+
+        <!-- Software -->
+        <section class="card software-card reveal">
+            <div class="neon-banner neon-yellow">SOFTWARE</div>
+            <div class="software-grid">
+                <span>📘 Word</span><span>💻 VS Code</span><span>📊 Excel</span><span>🎨 Canva</span><span>🎥 OBS Studio</span>
+                <span>📈 Power BI</span><span>📉 SPSS</span><span>🌐 Cisco Packet Tracer</span><span>📚 Eviews</span><span>🖼️ Power Point</span>
+            </div>
+        </section>
+
+        <!-- Bahasa (donut chart) -->
+        <section class="card language-section reveal">
+            <h2>Language</h2>
+            <div class="donut-wrapper">
+                <div class="donut" style="--val:50"><span>English 50%</span></div>
+                <div class="donut" style="--val:100"><span>Indonesian 100%</span></div>
+                <div class="donut" style="--val:100"><span>Javanese 100%</span></div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="card reveal">
+            <h2>Education</h2>
+            <ul class="edu-list">
+                <li><span class="edu-year">2018 - 2021</span><span class="edu-school">SMP Negri 2 Karanganyar</span></li>
+                <li><span class="edu-year">2021 - 2024</span><span class="edu-school">SMK Satya Karya Karanganyar</span></li>
+                <li><span class="edu-year">2024 - Now</span><span class="edu-school">UIN Salatiga</span></li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section class="card reveal">
+            <h2>Contact Me</h2>
+            <ul class="contact-list">
+                <li>📞 +62815 6583 268</li>
+                <li>✉️ stganata1975@gmail.com</li>
+                <li>📸 Instagram: sat_ganata</li>
+                <li>📘 Facebook: Satria Arganata</li>
+                <li>💻 GitHub: SatGaNata</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- File JavaScript utama -->
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>
